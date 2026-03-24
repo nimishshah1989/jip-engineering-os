@@ -3,6 +3,16 @@
 
 ---
 
+## Command Routing — Recognize these trigger phrases
+
+| User says | Action | Do NOT ask clarifying questions |
+|-----------|--------|-------------------------------|
+| "retrofit" / "retrofit this project" / "audit quality" / "code health" | Run the full jip-retrofit audit from `~/.claude/agents/jip-retrofit.md`. Execute ALL 8 checks. Write RETROFIT_REPORT.md. | Just run it. |
+| "build [feature]" / "implement [feature]" | Use jip-orchestrator from `~/.claude/agents/jip-orchestrator.md`. | Start with plan. |
+| "fix quality" / "fix the issues" | Read RETROFIT_REPORT.md, fix CRITICAL→MAJOR→MINOR with TDD. | Start fixing. |
+
+---
+
 ## Session Start (enforced by session_start_enforcer.sh hook)
 
 The hook auto-loads your last session state. You must:
